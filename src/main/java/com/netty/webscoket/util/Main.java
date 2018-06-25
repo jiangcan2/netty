@@ -1,9 +1,4 @@
-package com.netty.webscoket;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.netty.webscoket.util.MyWebSocketChannelHandler;
+package com.netty.webscoket.util;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -12,12 +7,15 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 程序入口，负责启动应用
+ *
+ * @author admin
+ */
 @Slf4j
-@SpringBootApplication
-public class WebscoketApplication {
+public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebscoketApplication.class, args);
         EventLoopGroup boosGroup = new NioEventLoopGroup();
         EventLoopGroup workGroup = new NioEventLoopGroup();
         try {
