@@ -1,4 +1,4 @@
-package com.netty.webscoket.nettyDemo.client;
+package com.netty.webscoket.nettyDemo.v4.client;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -8,10 +8,20 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class TimeClientHandler extends ChannelHandlerAdapter {
+	
+	private int counter = 0;
+	
+	private byte[] req ;
 
-	private final ByteBuf firstMessage;
+//	private final ByteBuf firstMessage;
 
-    @Override
+	public TimeClientHandler() {
+		req = ("QUERY TIME ORDER" + System.getProperty("line.separator")).getBytes();
+//		firstMessage = Unpooled.buffer(req.length);
+//		firstMessage.writeBytes(req);
+	}
+
+	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
     	cause.getSuppressed();
     	//释放资源
@@ -21,21 +31,26 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
 
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
-		ctx.writeAndFlush(firstMessage);
+		ByteBuf message = null;
+		for (int i = 0; i < 100; i++) {
+			message = Unpooled.buffer(req.length);
+			message.writeBytes(req);
+			ctx.writeAndFlush(message);
+		}
 	}
 
-	@Override
+	/*@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		ByteBuf buf = (ByteBuf)msg;
 		byte[] req = new byte[buf.readableBytes()];
 		buf.readBytes(req);
 		String body = new String(req,"UTF-8");
-		log.info("Now is:{}",body);
-	}
+		log.info("Now is:{}; the counter is:{}",body,++counter);
+	}*/
 
-    public TimeClientHandler() {
-        byte[] req = "QUERY TIME ORDER".getBytes();
-        firstMessage = Unpooled.buffer(req.length);
-        firstMessage.writeBytes(req);
-     }
+	@Override
+	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+		String body = (String)msg;
+		log.info("Now is:{}; the counter is:{}",body,++counter);
+	}
 }
