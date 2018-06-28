@@ -1,6 +1,7 @@
-package com.netty.webscoket.nettyDemo.v7.client;
+package com.netty.webscoket.nettyDemo.v7.serializable.client;
 
-import com.netty.webscoket.nettyDemo.v7.entity.SubscribeReq;
+
+import com.netty.webscoket.nettyDemo.v7.serializable.pojo.SubscribeReq;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;

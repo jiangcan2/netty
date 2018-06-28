@@ -1,4 +1,4 @@
-package com.netty.webscoket.nettyDemo.v7.entity;
+package com.netty.webscoket.nettyDemo.v7.serializable.pojo;
 
 import java.io.Serializable;
 
