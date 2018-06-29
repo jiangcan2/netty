@@ -3,7 +3,7 @@ package com.netty.webscoket.nettyDemo.v7.protobuf.test;
 import java.util.Arrays;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.netty.webscoket.nettyDemo.v7.protobuf.SubscribeReqProto;
+import com.netty.webscoket.nettyDemo.v7.protobuf.pojo.SubscribeReqProto;
 
 import lombok.extern.slf4j.Slf4j;
 
