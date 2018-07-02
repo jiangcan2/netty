@@ -1,4 +1,4 @@
-package com.netty.webscoket.nettyDemo.v10.server;
+package com.netty.webscoket.nettyDemo.v10.http.server;
 
 import java.io.File;
 import java.io.RandomAccessFile;

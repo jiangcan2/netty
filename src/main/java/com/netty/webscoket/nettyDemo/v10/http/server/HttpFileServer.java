@@ -1,4 +1,4 @@
-package com.netty.webscoket.nettyDemo.v10.server;
+package com.netty.webscoket.nettyDemo.v10.http.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
