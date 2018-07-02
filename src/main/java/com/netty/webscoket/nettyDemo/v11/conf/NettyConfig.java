@@ -1,4 +1,4 @@
-package com.netty.webscoket.conf;
+package com.netty.webscoket.nettyDemo.v11.conf;
 
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;

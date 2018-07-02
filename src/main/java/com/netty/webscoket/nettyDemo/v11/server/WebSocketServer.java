@@ -1,4 +1,4 @@
-package com.netty.webscoket.util;
+package com.netty.webscoket.nettyDemo.v11.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -7,15 +7,10 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * 程序入口，负责启动应用
- *
- * @author admin
- */
 @Slf4j
-public class Main {
+public class WebSocketServer {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         EventLoopGroup boosGroup = new NioEventLoopGroup();
         EventLoopGroup workGroup = new NioEventLoopGroup();
         try {
@@ -34,4 +29,5 @@ public class Main {
             workGroup.shutdownGracefully();
         }
     }
+	
 }

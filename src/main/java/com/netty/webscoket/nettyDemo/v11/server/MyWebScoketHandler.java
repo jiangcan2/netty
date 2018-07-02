@@ -1,8 +1,8 @@
-package com.netty.webscoket.util;
+package com.netty.webscoket.nettyDemo.v11.server;
 
 import java.util.Date;
 
-import com.netty.webscoket.conf.NettyConfig;
+import com.netty.webscoket.nettyDemo.v11.conf.NettyConfig;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
