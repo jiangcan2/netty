@@ -13,13 +13,19 @@ import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 public class NettyMessageDecoder extends LengthFieldBasedFrameDecoder{
 	
-	MarshallingDecoder marshallingDecoder;
-
 	public NettyMessageDecoder(int maxFrameLength, int lengthFieldOffset, int lengthFieldLength, int lengthAdjustment,
 			int initialBytesToStrip) throws IOException {
 		super(maxFrameLength, lengthFieldOffset, lengthFieldLength, lengthAdjustment, initialBytesToStrip);
 		marshallingDecoder = new MarshallingDecoder();
 	}
+
+
+
+
+	MarshallingDecoder marshallingDecoder;
+
+	
+	
 
 	@Override
 	protected Object decode(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
